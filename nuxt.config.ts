@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
   future: {
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://www.yunnanjia.com', // 必须配置您的真实域名
+    name: '云南省外出务工嘉兴就业服务站'
   },
 
   sitemap: {
