@@ -243,4 +243,20 @@ const reviews = [
     date: "2025年12月"
   }
 ]
+
+useSeoMeta({
+  title: '关于我们：坚持纯公益、0收费的“娘家人” | 云南省外出务工嘉兴就业服务站',
+  
+  description: '我们是谁？在云南、嘉兴两地政府和人社局的支持下，我们坚持做纯公益的劳务服务站。不仅提供免费食宿，更已成功帮助数千名云南老乡在嘉兴安稳落脚、高薪入职。',
+  
+  keywords: '云南驻嘉兴服务站是干嘛的,纯公益中介,免费找工作平台,人社局合作站点,嘉兴云南老乡互助,真实入职案例',
+
+  ogTitle: '我们是谁？云南工友在嘉兴的“娘家人”',
+  
+  ogDescription: '坚守公益初心，绝不收工友一分钱！看看我们是如何帮助数千名老乡在异乡吃上热饭、找到好工作的。',
+  
+  ogImage: '/img/media.png', 
+  ogLocale: 'zh_CN',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+});
 </script>

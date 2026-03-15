@@ -103,10 +103,7 @@ import {
   CheckCircle2
 } from 'lucide-vue-next';
 
-useSeoMeta({
-  title: '入驻申请流程 - 云南劳务关爱站',
-  description: '清晰的五步流程指南，帮助云南籍工友顺利入驻嘉兴劳务关爱站。',
-});
+
 
 // 将数据重命名，避免与你全局可能存在的变量冲突
 const stepsData = [
@@ -148,4 +145,20 @@ const checklist = [
   '求职空窗期或尚未入职证明',
   "一颗积极的心态,勤劳的双手"
 ];
+
+useSeoMeta({
+  title: '怎么申请免费吃住？- 入站流程指引 | 云南省外出务工嘉兴就业服务站',
+  
+  description: '云南老乡来嘉兴，只需简单几步即可申请免费食宿！带上身份证，按指引路线到达服务站，不填复杂表格，马上就能安排热饭和床铺。点此查看详细流程与乘车路线。',
+  
+  keywords: '怎么申请免费住宿,嘉兴服务站怎么走,云南人嘉兴找工作流程,进厂需要带什么,免住宿费条件',
+
+  ogTitle: '老乡看过来：嘉兴免费吃住申请流程！(超简单)',
+  
+  ogDescription: '刚下火车不知道怎么走？点开这篇流程，带好身份证，教你一步步免费入住关爱站，踏实找工作！',
+  
+  ogImage: '/img/media.png', 
+  ogLocale: 'zh_CN',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+});
 </script>

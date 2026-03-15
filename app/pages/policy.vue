@@ -18,10 +18,7 @@ import {
   CheckCircle2
 } from 'lucide-vue-next';
 
-useSeoMeta({
-  title: '服务政策 - 云南劳务关爱站',
-  description: '详细了解关爱站免费食宿申请条件及入驻须知。',
-});
+
 
 // 核心政策数据
 const policies = [
@@ -61,6 +58,22 @@ const policies = [
     ]
   }
 ];
+
+useSeoMeta({
+  title: '免费入住条件与防骗须知 - 官方政策 | 云南省外出务工嘉兴就业服务站',
+  
+  description: '在嘉兴服务站免费吃住需要什么条件？能免费住几天？这里为您详细解答入住政策。官方公益，绝不向工友收费，教你识别劳务黑中介套路，保障老乡合法权益。',
+  
+  keywords: '免费入住条件,嘉兴找工作防骗,劳务黑中介套路,嘉兴打工政策,免费住几天,云南工友维权,嘉兴临时住宿',
+
+  ogTitle: '必看！嘉兴服务站免费入住条件与防骗指南',
+  
+  ogDescription: '出门在外防人之心不可无。看看站里的免费政策和防骗提醒，认准官方公益站点，千万别被黑中介坑了钱！',
+  
+  ogImage: '/img/media.png', 
+  ogLocale: 'zh_CN',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+});
 </script>
 
 <template>

@@ -17,6 +17,7 @@
 
                 <!-- 桌面端导航链接 -->
                 <div class="hidden md:flex gap-6 text-slate-600 font-medium">
+                    <NuxtLink to="/" class="hover:text-emerald-600">首页</NuxtLink>
                     <NuxtLink to="/policy" class="hover:text-emerald-600">入住政策</NuxtLink>
                     <NuxtLink to="/apply" class="hover:text-emerald-600 transition-colors">申请流程</NuxtLink>
                     <NuxtLink to="/about" class="hover:text-emerald-600 transition-colors">关于我们</NuxtLink>
