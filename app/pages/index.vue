@@ -29,10 +29,10 @@
             class="bg-yellow-400 text-emerald-900 px-8 py-4 rounded-xl text-xl font-bold shadow-lg hover:bg-yellow-300 transition-all flex items-center justify-center gap-2">
             <PhoneCall class="w-6 h-6" /> 我要求助
           </a>
-          <button
-            class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl text-xl font-bold hover:bg-white/20 transition-all">
+          <NuxtLink to="/policy"
+            class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl text-xl font-bold hover:bg-white/20 transition-all block text-center">
             了解政策
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </header>
@@ -110,9 +110,7 @@
 
             <!-- 1. 底层地图图片 -->
             <!-- 建议：去高德地图截一张站点的图，替换下方的 src -->
-            <img
-              src="/img/ditu.png"
-              alt="关爱站地图位置"
+            <img src="/img/ditu.png" alt="关爱站地图位置"
               class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" />
 
             <!-- 2. 核心：绿色滤镜层 (采用了 mix-blend-mode 叠加效果) -->
@@ -165,7 +163,7 @@
             <div class="bg-emerald-700 text-white p-8 rounded-[2rem] shadow-lg relative overflow-hidden">
               <div class="relative z-10">
                 <h3 class="text-emerald-200 text-sm font-bold uppercase tracking-wider mb-2">详细地址</h3>
-                <p class="text-2xl font-bold mb-6 leading-snug">浙江省嘉兴市南湖区<br />嘉兴劳动大厦1楼</p>
+                <p class="text-2xl font-bold mb-6 leading-snug">浙江省嘉兴市秀洲区八联村X103路旁 <br>(云南省外出务工嘉兴就业服务站)</p>
                 <button @click="copyAddress"
                   class="bg-emerald-500/30 hover:bg-emerald-500/50 border border-emerald-400/30 px-6 py-3 rounded-xl transition-all flex items-center gap-2 text-sm">
                   <Copy class="w-4 h-4" /> 复制地址到剪贴板
@@ -184,20 +182,23 @@
               <div class="space-y-6">
                 <div class="flex gap-4">
                   <div class="w-12 h-12 bg-orange-50 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                    <TrainFront class="w-6 h-6 text-orange-500" />
+                    <Plane class="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <p class="font-bold text-slate-700 text-lg">嘉兴火车站</p>
-                    <p class="text-slate-500">下车后乘 <span class="text-emerald-600 font-medium">1路/10路</span> 公交直达</p>
+                    <p class="font-bold text-slate-700 text-lg">嘉兴南湖机场</p>
+                    <p class="text-slate-500">下飞机后乘 <span class="text-emerald-600 font-medium">350路</span> 至王王店镇政府站</p>
+                    <p class="text-slate-500">再转 <span class="text-emerald-600 font-medium">241路</span> 至八联村下车,步行140米
+                    </p>
                   </div>
                 </div>
                 <div class="flex gap-4">
                   <div class="w-12 h-12 bg-blue-50 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                    <Bus class="w-6 h-6 text-blue-500" />
+                    <TrainFront class="w-6 h-6 text-blue-500" />
                   </div>
                   <div>
-                    <p class="font-bold text-slate-700 text-lg">嘉兴汽车南站</p>
-                    <p class="text-slate-500">乘 <span class="text-emerald-600 font-medium">93路</span> 至XX路口下车</p>
+                    <p class="font-bold text-slate-700 text-lg">嘉兴高铁南站</p>
+                    <p class="text-slate-500">乘 <span class="text-emerald-600 font-medium">260路</span> 至嘉杭路长水路</p>
+                    <p class="text-slate-500">转 <span class="text-emerald-600 font-medium">241路</span> 步行约900米至目的地</p>
                   </div>
                 </div>
               </div>
@@ -207,43 +208,97 @@
       </div>
     </section>
 
-    <!-- 联系区 (Contact) -->
-    <section class="bg-slate-900 text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold mb-6">如果您正面临困难，<br />请立即联系我们</h2>
-          <p class="text-slate-400 mb-8 text-lg">
-            不管是刚下火车没地方去，还是找工作期间断了粮草，
-            滇籍劳务关爱站永远是您的后盾。
-          </p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4">
-              <div class="bg-emerald-600/20 p-3 rounded-full">
-                <MapPin class="text-emerald-500" />
-              </div>
-              <span>浙江省嘉兴市南湖区XX路XX号 (劳务关爱中心)</span>
+    <!-- 联系与求助区 (Contact & Immediate Help) -->
+    <section class="bg-slate-900 text-white py-24 relative overflow-hidden">
+      <!-- 装饰背景：增加一点温暖的氛围感 -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- 左侧：文字感召区 -->
+          <div class="space-y-8">
+            <div>
+              <span
+                class="inline-block px-4 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold mb-4 border border-emerald-500/30">
+                嘉兴工友守护热线
+              </span>
+              <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                出门在外不容易，<br />
+                <span class="text-emerald-500">有难处尽管开口。</span>
+              </h2>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="bg-emerald-600/20 p-3 rounded-full">
-                <Smartphone class="text-emerald-500" />
+
+            <p class="text-slate-400 text-xl leading-relaxed">
+              不论是没地住、没饭吃，还是找工作被骗，请不要独自面对。云南省外出务工嘉兴就业服务站是家乡政府在嘉兴为您设立的“避风港”。
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <div class="bg-emerald-500/20 p-2 rounded-lg">
+                  <Clock class="text-emerald-500 w-5 h-5" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">24小时值守</h4>
+                  <p class="text-slate-500 text-sm">无论多晚，都有人在等你</p>
+                </div>
               </div>
-              <span class="text-2xl font-mono">400-XXX-XXXX</span>
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <div class="bg-emerald-500/20 p-2 rounded-lg">
+                  <HeartHandshake class="text-emerald-500 w-5 h-5" />
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">家乡温情</h4>
+                  <p class="text-slate-500 text-sm">家乡人办的站，靠谱放心</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-          <form @submit.prevent class="space-y-4">
-            <input type="text" placeholder="您的姓名"
-              class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
-            <input type="tel" placeholder="手机号码"
-              class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
-            <textarea placeholder="简单描述您的情况（如：刚到嘉兴需要住宿）" rows="3"
-              class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-            <button
-              class="w-full bg-emerald-600 py-4 rounded-xl font-bold text-lg hover:bg-emerald-500 transition shadow-lg shadow-emerald-900/20">
-              提交申请，我们会主动联系您
-            </button>
-          </form>
+
+          <!-- 右侧：直观求助卡片 (替换掉原来的表单) -->
+          <div class="relative group">
+            <!-- 装饰发光层 -->
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000">
+            </div>
+
+            <div class="relative bg-slate-800 border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl">
+              <div class="text-center space-y-8">
+                <div
+                  class="inline-flex items-center justify-center w-20 h-20 bg-emerald-500 rounded-full shadow-lg shadow-emerald-500/40 animate-bounce">
+                  <PhoneCall class="w-10 h-10 text-white" />
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">直接拨打求助电话</h3>
+                  <p class="text-slate-400">点击下方号码可立即拨号</p>
+                </div>
+
+                <a href="tel:13656617631" class="block">
+                  <div
+                    class="bg-slate-900/50 border border-emerald-500/30 py-6 rounded-3xl group-hover:border-emerald-500 transition-colors">
+                    <span class="text-4xl md:text-5xl font-black text-emerald-500 tracking-tighter">136-5661-7631</span>
+                  </div>
+                </a>
+
+                <div class="flex flex-col gap-4 pt-4">
+                  <button @click="copyPhone"
+                    class="flex items-center justify-center gap-2 text-slate-400 hover:text-white transition-colors">
+                    <Copy class="w-4 h-4" /> 复制电话号码
+                  </button>
+
+                  <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent w-full my-2"></div>
+
+                  <p class="text-sm text-slate-500">
+                    地址：浙江省嘉兴市秀洲区八联村X103路旁 <br>
+                    (云南省外出务工嘉兴就业服务站)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -253,18 +308,42 @@
 </template>
 
 <script setup>
-// 引入图标
+// 1. 初始化 Nuxt UI 的 Toast 功能
+const toast = useToast();
+
+// 2. 引入图标 (合并了所有重复项，移除了错误的 AnimationPlaybackEvent)
 import {
-  PhoneCall, Home, UtensilsCrossed, Briefcase,
-  ChevronRight, MapPin, Smartphone,
-  Navigation, Map as MapIcon, Copy, TrainFront, Bus
+  PhoneCall,
+  Home,
+  UtensilsCrossed,
+  Briefcase,
+  ChevronRight,
+  MapPin,
+  Smartphone,
+  Navigation,
+  Map as MapIcon,
+  Copy,
+  TrainFront,
+  Bus,
+  Plane, // 别忘了刚才加的飞机图标
+  Clock,
+  HeartHandshake
 } from 'lucide-vue-next';
+
+// 3. 业务逻辑：复制地址
 const copyAddress = () => {
-  const address = "浙江省嘉兴市南湖区嘉兴劳动大厦1楼";
+  const address = "浙江省嘉兴市秀洲区八联村X103路旁";
   navigator.clipboard.writeText(address);
-  alert("地址已复制，可直接粘贴到地图软件查找");
+  toast.success('地址已复制，可直接粘贴到地图软件查找');
 };
-// 流程步骤数据
+
+// 4. 业务逻辑：复制电话
+const copyPhone = () => {
+  navigator.clipboard.writeText('13656617631');
+  toast.success('电话号码已复制');
+};
+
+// 5. 流程步骤数据
 const steps = [
   { title: '在线申请/拨打电话', desc: '通过网站或电话联系我们' },
   { title: '信息核实', desc: '出示有效身份证及务工证明' },
@@ -272,11 +351,15 @@ const steps = [
   { title: '安心找工作', desc: '享受食宿，对接企业面试' }
 ];
 
-// Nuxt SEO 配置
+// 6. Nuxt SEO 配置
 useSeoMeta({
   title: '云南劳务关爱站 - 岗前免费食宿',
-  description: '为云南省外出务工人员提供嘉兴岗前免费食宿服务。',
+  description: '为云南省外出务工人员提供嘉兴岗前免费食宿服务，吃饭不愁，住得安心。',
+  ogTitle: '云南劳务关爱站 - 岗前免费食宿',
+  ogDescription: '为云南省外出务工人员提供嘉兴岗前免费食宿服务。',
 });
+
+
 </script>
 
 <style>
