@@ -22,4 +22,15 @@ export default defineNuxtConfig({
     emailUser: process.env.NUXT_EMAIL_USER,
     emailPass: process.env.NUXT_EMAIL_PASS,
   },
+  site: {
+    url: 'https://www.yunnanjia.com', // 必须配置您的真实域名
+  },
+
+  sitemap: {
+    // 如果您的页面都是在 pages 目录下的静态路由，它会自动抓取
+    // 这里可以额外配置一些不希望被抓取的页面，比如后台管理(如果有)
+    // exclude: [
+    //   '/admin/**'
+    // ]
+  }
 })
